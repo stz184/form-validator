@@ -1,6 +1,6 @@
 {
     "name": "stz184/form-validator",
-    "description": "Very simple and ease to use implementation of captcha image generator.",
+    "description": "Very simple and ease to use implementation of form validator.",
     "require": {},
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
