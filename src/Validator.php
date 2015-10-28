@@ -26,7 +26,7 @@ class Validator {
     /**
      * @param string $field
      * @param string $label
-     * @param array $rules validation rules separated by |
+     * @param array $rules validation rules
      */
     public function addRule($field, $label, array $rules)
     {
@@ -37,6 +37,13 @@ class Validator {
         ];
     }
 
+    /**
+     * Register external validator using callable
+     * 
+     * @param string $name 
+     * @param callable $callable 
+     * @return void
+     */
     public function registerValidator($name, $callable)
     {
         if (is_callable($callable)) {
@@ -54,8 +61,8 @@ class Validator {
     }
 
     /**
-     * @param $field
-     * @return mixed
+     * @param string $field
+     * @return string
      */
     public function getLabel($field)
     {
@@ -63,8 +70,8 @@ class Validator {
     }
 
     /**
-     * @param $field
-     * @param $message
+     * @param string $field
+     * @param string $message
      */
     public function setError($field, $message)
     {
@@ -72,7 +79,7 @@ class Validator {
     }
 
     /**
-     * @param $field
+     * @param string $field
      * @return bool
      */
     private function required($field)
@@ -93,8 +100,8 @@ class Validator {
     }
 
     /**
-     * @param $field
-     * @param $length
+     * @param string $field
+     * @param integer $length
      * @return bool
      */
     private function minlength($field, $length)
@@ -109,8 +116,8 @@ class Validator {
     }
 
     /**
-     * @param $field
-     * @param $length
+     * @param string $field
+     * @param integer $length
      * @return bool
      */
     private function maxlength($field, $length)
@@ -137,7 +144,7 @@ class Validator {
     }
 
     /**
-     * @param $field
+     * @param string $field
      * @return bool
      */
     private function phone($field)
@@ -154,7 +161,7 @@ class Validator {
     }
 
     /**
-     * @param $field
+     * @param string $field
      * @return bool
      */
     private function skype($field)
@@ -169,7 +176,7 @@ class Validator {
     }
 
     /**
-     * @param $field
+     * @param string $field
      * @return bool
      */
     private function url($field) {
