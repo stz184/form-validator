@@ -182,7 +182,7 @@ class Validator {
     private function url($field) {
         $start_url  = "(http(s)?\:\/\/)?"; // start url
         $dots       = "([\w_-]{2,}\.)+"; // one or more parts containing a '.' at the end
-        $last_part  = "([\w_-]{2,6})"; // last part doesn't contain a dot
+        $last_part  = "([\w_-]{2,})"; // last part doesn't contain a dot
         $user       = "((\/)(\~)[\w_-]+)?((\/)[\w_-]+)*"; // maybe subdirectories - possibly with user ~
         $end        = "((\/)|(\/)[\w_-]+\.[\w]{2,})?"; // maybe a slash at the end or slash+file+extension
         $qstring1   = "((\?[\w_-]+\=([^\#]+)){0,1}"; // querystring - first argument (?a=b)
